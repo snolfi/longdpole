@@ -33,7 +33,7 @@ LongdpoleEnv-v2: the length and the mass of the second pole is 70% that of the f
 A basic script testing the environment:
 
     import gym
-    import longdpole  # this instruction import the c++ library compiled with cython
+    import longdpole  # this instruction imports the c++ library compiled with cython
     
     env = gym.make('LongdpoleEnv-v0')
     env.reset()

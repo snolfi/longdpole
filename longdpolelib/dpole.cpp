@@ -225,7 +225,8 @@ double Problem::step()
 {
     double reward;
     // Perform the action
-    performAction(*caction);
+    // transform the action from the range [-1.0, 1.0] into the range [0.0, 1.0] 
+    performAction((*caction + 1.0) / 2.0);
     // Get observations
     getObs();
     // increment step

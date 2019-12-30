@@ -13,7 +13,7 @@ Consequently it can be used to benchmark modern algorithms.
 
 To install this environment use the following instructions:
 
-    git clone https://github.com/yconst/balance-bot
+    git clone https://github.com/snolfi/longdpole
     cd longdpole
     cd longdpolelib
     python setupErDpole.py build_ext --inplace  

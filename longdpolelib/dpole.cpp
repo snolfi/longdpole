@@ -56,7 +56,8 @@ void Problem::doStep(double action, double *st, double *derivs)
     double LENGTH_2 = m_length_2;
     double MASSPOLE_2 = m_masspole_2;
 
-    force =  (action - 0.5) * FORCE_MAG * 2;
+    // we assume that force is in the range [-1.0, 1.0]
+    force =  action * FORCE_MAG;
     costheta_1 = cos(st[2]);
     sintheta_1 = sin(st[2]);
     gsintheta_1 = GRAVITY * sintheta_1;
@@ -225,8 +226,7 @@ double Problem::step()
 {
     double reward;
     // Perform the action
-    // transform the action from the range [-1.0, 1.0] into the range [0.0, 1.0] 
-    performAction((*caction + 1.0) / 2.0);
+    performAction(*caction);
     // Get observations
     getObs();
     // increment step
